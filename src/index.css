@@ -1,0 +1,395 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar {
+  background-color: #486966;
+  color: white;
+  padding: 15px 25px;
+  position: sticky; 
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-left {
+  display: flex;
+}
+
+.navbar-right {
+  margin-right: 10px;
+}
+
+.logo {
+  width: 30px; 
+  height: auto;
+}
+
+.nav-link {
+  color: white; 
+}
+
+.logout-link {
+  color: rgb(212, 169, 169);
+  font-weight: bold;
+}
+
+.nav-link, .logout-link {
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-right: 20px; 
+}
+
+.nav-link:hover, .logout-link:hover {
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0.2); 
+  /* font-size: 1.1em; =>> ini klo mau dibikin goyang2 kwkw */
+}
+
+.app-container {
+  padding-top: 50px; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .05); 
+}
+
+body {
+  color: #486966;
+  background: #f5f5f5;
+  font-family: 'Varela Round', sans-serif;
+  font-size: 13px;
+}
+
+.table-wrapper {
+  background: #fff;
+  padding: 20px;
+  margin: 30px 0;
+  border-radius: 3px;
+}
+
+.table-wrapper table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-wrapper table th,
+.table-wrapper table td {
+  border-color: #e9e9e9;
+  padding: 12px 10px;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 16px;
+}
+
+.table-wrapper th {
+  font-size: 18px;
+}
+
+.table-wrapper table th:first-child,
+.table-wrapper table td:first-child {
+  width: auto;
+}
+
+.table-wrapper table th:last-child,
+.table-wrapper table td:last-child {
+  width: 20%;
+}
+
+.table-wrapper table th:last-child {
+  width: 15%;
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #fcfcfc;
+}
+
+.table-striped.table-hover tbody tr:hover {
+  background: #f5f5f5;
+}
+
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  margin: 0;
+  z-index: 9;
+  cursor: pointer;
+}
+
+.custom-checkbox label:before {
+  content: '';
+  display: inline-block;
+  width: 24px; 
+  height: 24px; 
+  margin-right: 10px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 3px;
+  width: 6px;
+  height: 11px;
+  border: solid #000;
+  border-width: 0 3px 3px 0;
+  transform: rotateZ(45deg);
+  cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:before {
+  border-color: #486966;
+  background: #486966;
+  cursor: pointer; 
+}
+
+.custom-checkbox input[type="checkbox"]:checked + label:after {
+  border-color: #fff;
+  cursor: pointer;
+}
+
+.custom-checkbox input[type="checkbox"]:disabled + label:before {
+  cursor: auto;
+  background: #ddd;
+}
+
+.custom-checkbox label:hover:before {
+  transform: scale(1.35); 
+}
+
+.hint-text {
+  margin-top: 10px;
+  font-size: 13px;
+}
+
+.button-wrapper {
+  margin-top: 20px;
+  text-align: right; 
+}
+
+.button-wrapper button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+  box-shadow: 0 5px 6px rgba(71, 70, 70, 0.247); 
+}
+
+.button-wrapper button.btn-save {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.button-wrapper button.btn-edit {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.button-wrapper button.btn-save:hover,
+.button-wrapper button.btn-edit:hover {
+  color: #fff; /* Mengubah warna teks saat tombol dihover */
+  transform: scale(1.05); /* Memperbesar tombol saat dihover */
+}
+
+
+
+/* DARI NOVU */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+font-family: "Space Grotesk", sans-serif;
+}
+body {
+margin: 0;
+padding: 0;
+}
+a {
+text-decoration: none;
+color: #c58940;
+cursor: auto;
+}
+input,
+textarea {
+padding: 15px;
+width: 100%;
+margin-bottom: 20px;
+}
+label {
+margin-bottom: 5px;
+}
+button {
+cursor: auto;
+outline: none;
+border: none;
+padding: 10px;
+}
+.login,
+.login__form,
+.signup,
+.signup__form {
+width: 100%;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.login__form input,
+.signup__form input {
+width: 70%;
+}
+.login__title,
+.signup__title {
+margin-bottom: 30px;
+}
+.loginButton,
+.signupButton {
+width: 200px;
+padding: 15px;
+background-color: #e6ddc4;
+}
+.dashboard__nav {
+background-color: #c58940;
+height: 10vh;
+width: 100%;
+padding: 20px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+.logout__btn,
+.dashboard__heading button {
+padding: 15px;
+width: 150px;
+margin-right: 15px;
+background-color: #faf8f1;
+}
+.logout__btn:hover {
+background-color: #faeab1;
+}
+.dashboard__main {
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+.dashboard__heading {
+display: flex;
+margin-bottom: 25px;
+align-items: center;
+justify-content: space-between;
+}
+.timezone__wrapper {
+width: 50%;
+}
+.saveBtn__container {
+width: 100%;
+padding: 30px;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.saveBtn__container button {
+width: 200px;
+padding: 15px;
+background-color: #faeab1;
+}
+.form {
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 30px;
+}
+.select__wrapper {
+display: flex;
+flex-direction: column;
+align-items: center;
+margin: 15px;
+}
+select {
+padding: 10px;
+min-width: 150px;
+}
+.profile {
+min-height: 100vh;
+width: 100%;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+table {
+border: 1px solid #ddd;
+width: 100%;
+border-collapse: collapse;
+}
+tr,
+td {
+border: 1px solid #ddd;
+padding: 20px;
+}
+.bookContainer {
+width: 100%;
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+padding: 30px;
+}
+.booking__form {
+display: flex;
+justify-content: center;
+flex-direction: column;
+width: 80%;
+margin: 0 auto;
+}
+.bookTitle {
+margin-bottom: 30px;
+color: #c58940;
+}
+.bookingBtn {
+margin-top: 20px;
+background-color: #c58940;
+color: #fff;
+}
+.errorContainer {
+display: flex;
+align-items: center;
+height: 100vh;
+width: 100%;
+padding: 30px;
+justify-content: center;
+flex-direction: column;
+}
