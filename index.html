@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dokumentasi Contoh Proyek Frontend</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background: #eee;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Dokumentasi Contoh Proyek Frontend</h1>
+        <p>Dokumentasi ini merupakan referensi untuk memahami struktur dan cara kerja proyek contoh yang menggunakan ReactJS sebagai frontend. Proyek ini dapat dijadikan acuan dalam pengembangan proyek kalian dengan teknologi yang sama. Silakan gunakan dokumentasi ini untuk memahami bagaimana frontend berkomunikasi dengan backend serta bagaimana data dikelola di dalamnya. Dokumentasi ini berisi:</p>
+        <ul>
+            <li>Cara menjalankan proyek</li>
+            <li>Bagaimana aplikasi bekerja secara garis besar</li>
+            <li>Bagian yang perlu diperhatikan dalam kode</li>
+            <li>Komunikasi dengan tim backend</li>
+        </ul>
+
+        <h2>1. Cara Menjalankan Proyek</h2>
+        <p>Ikuti langkah-langkah berikut untuk menjalankan proyek frontend ini:</p>
+        <pre>
+            git clone https://github.com/bengkrad-imt-projects/contoh-fe
+            cd contoh-fe
+            npm install
+            npm start
+        </pre>
+
+        <h2>2. Bagaimana Aplikasi Bekerja</h2>
+        <p>Secara garis besar, alur kerja aplikasi adalah sebagai berikut:</p>
+        <ul>
+            <li>Ketika halaman dimuat, aplikasi akan mengambil data jadwal dari backend melalui API.</li>
+            <li>Data yang diterima kemudian diproses dan disimpan dalam state menggunakan React hooks.</li>
+            <li>Pengguna dapat memilih jadwal kosong dengan mengklik checkbox yang tersedia.</li>
+            <li>Jika pengguna menyimpan perubahan, data akan dikirim kembali ke backend.</li>
+        </ul>
+
+        <h2>3. Bagian yang Perlu Diperhatikan</h2>
+        <ul>
+            <li><strong>src/components/</strong>: Berisi komponen utama, termasuk <code>Navbar.js</code> dan <code>PilihSchedule.js</code>.</li>
+            <li><strong>src/hooks/</strong>: Berisi <code>useSchedule.js</code> untuk mengelola state dan komunikasi dengan API.</li>
+            <li><strong>src/utils/</strong>: Berisi <code>Schedule.js</code> yang mendefinisikan struktur data jadwal.</li>
+        </ul>
+
+        <h2>4. Komunikasi dengan Tim Backend</h2>
+        <p>Aplikasi ini membutuhkan komunikasi dengan backend dalam beberapa aspek:</p>
+        <ul>
+            <li>Mengambil data jadwal saat aplikasi pertama kali dimuat.</li>
+            <li>Mengirim data yang telah diubah oleh pengguna kembali ke backend.</li>
+        </ul>
+
+        <h3>Format Data yang Dikirim dan Diterima</h3>
+        <p>Contoh format request yang dikirim ke backend saat menyimpan data:</p>
+        <pre>
+            {
+                "id": "0",
+                "jadwal": [
+                    { "Senin": { "07:00 - 09.00": 1, "08:00 - 10.00": 0 } },
+                    { "Selasa": { "07:00 - 09.00": 0, "08:00 - 10.00": 1 } }
+                ]
+            }
+        </pre>
+        <p>Respons yang diterima dari backend saat mengambil data:</p>
+        <pre>
+            {
+                "selected-schedule": [
+                    {
+                        "id": "0",
+                        "jadwal": [
+                            { "Senin": { "07:00 - 09.00": 1, "08:00 - 10.00": 0 } },
+                            { "Selasa": { "07:00 - 09.00": 0, "08:00 - 10.00": 1 } }
+                        ]
+                    }
+                ]
+            }
+        </pre>
+        <h3>Bagian Kode yang Mengirim dan Menerima Data</h3>
+        <p>Di dalam <code>useSchedule.js</code>, data diambil dari backend menggunakan:</p>
+        <pre>
+            const response = await axios.get(apiURL);
+        </pre>
+        <p>Data dikirim kembali ke backend menggunakan:</p>
+        <pre>
+            await axios.post(apiURL, payload, { headers: { "Content-Type": "application/json" } });
+        </pre>
+        <p>Bagian ini harus disesuaikan dengan backend yang digunakan. Tim frontend perlu berdiskusi dengan tim backend mengenai:</p>
+        <ul>
+            <li>Endpoint API yang digunakan</li>
+            <li>Format data yang dikirim dan diterima</li>
+            <li>Metode HTTP yang digunakan</li>
+        </ul>
+        <p>Semoga dokumentasi ini membantu dalam pengembangan proyek kalian. Jika ada pertanyaan atau hal yang perlu didiskusikan lebih lanjut, jangan ragu untuk berkomunikasi dengan tim terkait.</p>
+    </div>
+</body>
+</html>
